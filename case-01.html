@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+    body>h1:first-child{
+      font-size: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    section{
+      position: relative;
+      top: 50px;
+      font-size: 40px;
+      display: flex;
+      justify-content: space-around;
+    }
+  </style>
+</head>
+<body>
+<h1>JS Que</h1>
+
+
+<section>
+  <div>A</div>
+  <div>B</div>
+  <div>C</div>
+  <div>D</div>
+  <div>E</div>
+  <div>F</div>
+</section>
+<script>
+  var elemts = ["A", "B", "C", "D", "E", "F"];
+
+  const setElements = () => {
+    // let i = 0;
+    let lastElement = elemts.pop();
+    elemts.unshift(lastElement);
+    for (let i = 0; i < elemts.length; i++) {
+      document.getElementsByTagName("div")[i].innerText = elemts[i];
+      console.log(document.getElementsByTagName("div")[i].innerHTML);
+    }
+
+  }
+  setInterval(setElements, 3000);
+</script>
+</body>
+</html>

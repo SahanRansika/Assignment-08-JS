@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+  body{
+    background-color: black;
+  }
+  body>h1:first-child{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  section{
+    position: relative;
+    top: 150px;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  section>div{
+    width: 100px;
+    aspect-ratio: 1/0.5;
+    background-color: white;
+    margin-right: 10px;
+  }
+  section>div:first-child{
+    background-color: red;
+    position: relative;
+    bottom: 12vh;
+    margin-right: 80px;
+  }
+  section>div:nth-child(2){
+    background-color: green;
+  }
+  section>div:nth-child(3){
+    background-color: blue;
+  }
+  section>div:nth-child(4){
+    background-color: yellow;
+  }
+  section>div:nth-child(5){
+    background-color: orangered;
+  }
+  section>div:nth-child(6){
+    background-color: pink;
+    position: relative;
+    top: 12vh;
+    margin-left: 80px;
+  }
+</style>
+<body>
+<section>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</section>
+<script>
+  var styles = ["red", "green", "blue", "yellow", "orange", "pink"];
+
+  const setElements = () => {
+    let lastElement = styles.pop();
+    styles.unshift(lastElement);
+    for (let i = 0; i < styles.length; i++) {
+      document.getElementsByTagName("div")[i].style.backgroundColor = styles[i];
+    }
+  }
+  setInterval(setElements, 1000);
+</script>
+</body>
+</html>
